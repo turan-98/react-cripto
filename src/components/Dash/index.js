@@ -15,15 +15,39 @@ export default function Dash() {
     })
   }, []);
 
-
+  // copiar este site  
+  //https://coinmarketcap.com/all/views/all/
   return (
-    <div>
-      {post.map((post,index) =>{
-        return(
-          <p key={index}>{post.name}</p>
-        )
-      })}
-    </div>
+    <>
+    <span className="notice">
+     Still in work in progress... 👨‍💻🧟
+     <small>Project based in React, Next.js, CSS, API REST</small>
+    </span>
+    <table className="wrapper-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>Price</th>
+          <th>Volume</th>
+        </tr>
+      </thead>
+      <tbody className="body-table">
+        {post.map((post, index) => {
+          return (
+            <tr className="lines-table" key={index}>
+              <td>{index}</td>
+              <td className="name-coin">{post.name}</td>
+              <td>{post.quote}</td>
+              <td>{post.price}</td>
+              <td>{post.volume}</td>
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
+    </>
   )
 }
 
